@@ -8,7 +8,7 @@
     "website": "",
     "license": "LGPL-3",
     "category": "Marketing",
-    "depends": ["base", "crm", "social_marketing"],
+    "depends": ["base", "crm", "social"],
     "data": [
         "security/ir.model.access.csv",
         "views/ads_campaign_views.xml",
