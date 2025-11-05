@@ -4,7 +4,7 @@
     <menuitem
         id="menu_ads_root"
         name="Ads"
-        parent="social.menu_social_root"
+        parent="social.menu_social_global"
         sequence="80"
     />
 
