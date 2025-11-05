@@ -12,19 +12,18 @@
         </field>
     </record>
 
-    <record id="menu_ads_root" model="ir.ui.menu">
-        <field name="name">Ads</field>
-        <field name="sequence">80</field>
-        <field name="parent_id" ref="marketing.marketing_configuration" ondelete="cascade" />
-        <!-- If parent not found, it will still create a top-level. -->
-    </record>
+    <!-- Root Menu under Social Marketing (or standalone if not installed) -->
+    <menuitem id="menu_ads_root"
+              name="Ads"
+              parent="social.menu_social_root"
+              sequence="80"/>
 
-    <record id="menu_ads_campaigns" model="ir.ui.menu">
-        <field name="name">Campaigns</field>
-        <field name="parent_id" ref="menu_ads_root"/>
-        <field name="action" ref="action_ads_campaign"/>
-        <field name="sequence">10</field>
-    </record>
+    <!-- Campaigns submenu -->
+    <menuitem id="menu_ads_campaigns"
+              name="Campaigns"
+              parent="menu_ads_root"
+              action="action_ads_campaign"
+              sequence="10"/>
 
     <!-- Tree view -->
     <record id="view_ads_campaign_tree" model="ir.ui.view">
@@ -82,7 +81,7 @@
                         <field name="updated_time_raw"/>
                     </group>
                     <group>
-                        <field name="actions_json" readonly="1" />
+                        <field name="actions_json" readonly="1"/>
                     </group>
                 </sheet>
             </form>
