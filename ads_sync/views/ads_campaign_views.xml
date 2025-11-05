@@ -15,7 +15,6 @@
     <!-- Root Menu under Social Marketing (or standalone if not installed) -->
     <menuitem id="menu_ads_root"
               name="Ads"
-              parent="social.menu_social_root"
               sequence="80"/>
 
     <!-- Campaigns submenu -->
