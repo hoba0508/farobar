@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Root menu under Marketing -->
-    <menuitem id="menu_ads_root"
-              name="Ads"
-              parent="social.menu_social_root"  <!-- This attaches to Social Marketing main menu -->
-              sequence="80"/>
+    <!-- Root Menu under Social Marketing -->
+    <menuitem
+        id="menu_ads_root"
+        name="Ads"
+        parent="social.menu_social_root"
+        sequence="80"
+    />
 
-    <!-- Action for Campaigns -->
+    <!-- Campaigns submenu -->
+    <menuitem
+        id="menu_ads_campaigns"
+        name="Campaigns"
+        parent="menu_ads_root"
+        action="action_ads_campaign"
+        sequence="10"
+    />
+
+    <!-- Ads Campaign Action -->
     <record id="action_ads_campaign" model="ir.actions.act_window">
         <field name="name">Ads Campaigns</field>
         <field name="res_model">ads.campaign</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Use the Ads Sync wizard to import ads campaigns from Facebook or other platforms.
+                Use the Ads Sync wizard (Settings → Marketing → Ads Sync) to import ads.
             </p>
         </field>
     </record>
-
-    <!-- Campaigns submenu -->
-    <menuitem id="menu_ads_campaigns"
-              name="Campaigns"
-              parent="menu_ads_root"
-              action="action_ads_campaign"
-              sequence="10"/>
 
     <!-- List view -->
     <record id="view_ads_campaign_list" model="ir.ui.view">
