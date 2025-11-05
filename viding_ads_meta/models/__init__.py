@@ -1,1 +1,1 @@
-from . import ads_models
+from . import ads_model
